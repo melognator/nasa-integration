@@ -1,0 +1,16 @@
+<template>
+  <lightning-card title="APOD History" icon-name="custom:custom10">
+    <div slot="actions">
+        <lightning-button-icon onclick={handleRefresh}
+            icon-name="utility:refresh"
+        ></lightning-button-icon>
+    </div>
+    <lightning-datatable
+        key-field="Id"
+        data={apods.data}
+        columns={columns}
+        wrap-text-max-lines="2"
+        hide-checkbox-column="true">
+    </lightning-datatable>
+  </lightning-card>
+</template>

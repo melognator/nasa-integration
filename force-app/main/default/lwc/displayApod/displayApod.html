@@ -1,0 +1,31 @@
+<template>
+  <lightning-card title="Astronomical Picture of the Day" icon-name="custom:custom11">
+    <div slot="actions">
+      <template lwc:if={refreshApod}>
+        <lightning-button-icon onclick={refreshApod}
+            icon-name="utility:refresh"
+        ></lightning-button-icon>
+      </template>
+    </div>
+    <template lwc:if={apod}>
+      <template lwc:if={isImage}>
+        <a target="_blank" class="apod-image-container" href={apod.URL__c}>
+          <div class="slds-text-heading_medium">Click for full size</div>
+          <img src={apod.URL__c} alt={apod.Name} />
+        </a>
+      </template>
+      <template lwc:else>
+        <div class="apod-video-container">
+          <iframe src={apod.URL__c} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </template>
+      <div slot="footer">
+        <h2 class="slds-text-title_bold">{apod.Name}</h2>
+        <p>{apod.Explanation__c}</p>
+      </div>
+    </template>
+    <template lwc:else>
+      <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+  </lightning-card>
+</template>

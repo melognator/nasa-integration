@@ -1,0 +1,7 @@
+<template>
+  <lightning-card title="Get APODS between dates" icon-name="standard:key_dates">
+    <lightning-input name="startDate" type="date" label="Start date" onchange={inputOnChange} value={startDate}></lightning-input>
+    <lightning-input name="endDate" class="slds-m-bottom_x-small" type="date" label="End date" onchange={inputOnChange} value={endDate}></lightning-input>
+    <lightning-button label="Retrieve APODS" onclick={handleRetrieve}></lightning-button>
+  </lightning-card>
+</template>

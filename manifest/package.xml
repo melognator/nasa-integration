@@ -1,36 +1,120 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
+        <members>ApodCalloutMock</members>
+        <members>ApodController</members>
+        <members>ApodControllerTest</members>
+        <members>ApodIntegration</members>
+        <members>ApodIntegrationTest</members>
+        <members>ApodSchedule</members>
+        <members>ApodScheduleTest</members>
+        <members>ApodService</members>
+        <members>ApodServiceTest</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexComponent</name>
+        <members>nasa</members>
+        <name>ContentAsset</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexPage</name>
+        <members>APOD_Nasa</members>
+        <name>CspTrustedSite</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexTestSuite</name>
+        <members>Nasa</members>
+        <name>CustomApplication</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
+        <members>Apod__c.ApodID__c</members>
+        <members>Apod__c.Copyright__c</members>
+        <members>Apod__c.Date__c</members>
+        <members>Apod__c.Explanation__c</members>
+        <members>Apod__c.HDURL__c</members>
+        <members>Apod__c.Media_Type__c</members>
+        <members>Apod__c.URL__c</members>
+        <name>CustomField</name>
     </types>
     <types>
-        <members>*</members>
-        <name>AuraDefinitionBundle</name>
+        <members>CustomLabels</members>
+        <name>CustomLabels</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Apod__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Apod__c-en_US</members>
+        <name>CustomObjectTranslation</name>
+    </types>
+    <types>
+        <members>Apod__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Apod_Record_Page</members>
+        <members>Nasa_Home_Page</members>
+        <members>Nasa_UtilityBar</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>Apod__c-Apod Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>apodDetails</members>
+        <members>apodTable</members>
+        <members>displayApod</members>
+        <members>pictureOfTheDay</members>
+        <members>retrieveApods</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
-        <members>*</members>
-        <name>StaticResource</name>
+        <members>Apod__c.All</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>Dummy User</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>Dummy_User_profilePasswordPolicy1728414288108</members>
+        <name>ProfilePasswordPolicy</name>
+    </types>
+    <types>
+        <members>Dummy_User_profileSessionSetting1728414288183</members>
+        <name>ProfileSessionSetting</name>
+    </types>
+    <types>
+        <members>Apod</members>
+        <members>NasaAPI</members>
+        <name>RemoteSiteSetting</name>
+    </types>
+    <types>
+        <members>Org</members>
+        <name>Settings</name>
+    </types>
+    <types>
+        <members>Apod__c</members>
+        <name>SharingRules</name>
+    </types>
+    <types>
+        <members>Apod__c</members>
+        <name>TopicsForObjects</name>
+    </types>
+    <types>
+        <members>de</members>
+        <members>en_US</members>
+        <members>es_MX</members>
+        <members>fr</members>
+        <members>ja</members>
+        <members>ko</members>
+        <members>pt_BR</members>
+        <members>zh_CN</members>
+        <name>Translations</name>
+    </types>
+    <types>
+        <members>Apod_Record_Page</members>
+        <name>UiViewDefinition</name>
     </types>
     <version>61.0</version>
 </Package>

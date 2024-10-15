@@ -28,7 +28,7 @@ public with sharing class ApodController {
             Apod__c todayApod = [Select Id, Name, Copyright__c, Date__c, Explanation__c, HDURL__c, Media_Type__c, URL__c from Apod__c WHERE Date__c = Today];
             return todayApod;
         } catch (Exception e) {
-            throw new AuraHandledException(e.getMessage());
+            return null;
         }
     }
 
@@ -47,6 +47,22 @@ public with sharing class ApodController {
             throw new AuraHandledException(e.getMessage());
         }
     }
+
+    @AuraEnabled
+    /**
+     * Method to get the Astronomy Picture of the Day (APOD) for today.
+     * It's used in case the Scheduler is not working.
+     */
+    public static Boolean retrieveTodayApod() {
+        try {
+            throwException();
+            ApodIntegration.getApod();
+            return true;
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+
 
     @AuraEnabled
     /**

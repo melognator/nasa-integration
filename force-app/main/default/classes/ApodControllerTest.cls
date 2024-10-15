@@ -31,11 +31,11 @@ public class ApodControllerTest {
     static void testGetTodayApod_NoRecord() {
         // Test exception when no APOD exists for today
         Test.startTest();
-        try {
-            ApodController.getTodayApod();
-            System.assert(false, 'Expected exception because no APOD for today.');
-        } catch (AuraHandledException e) {
-          
+        Object result = ApodController.getTodayApod();
+        if (result == null) {
+            System.assert(true);
+        } else {
+            System.assert(false, 'Expected null result');
         }
         Test.stopTest();
     }
@@ -93,18 +93,6 @@ public class ApodControllerTest {
         System.assertEquals(1, apodRecords.size()); // Suponiendo que el mock devuelve solo un registro
     }
 
-    @isTest
-    static void testGetTodayApodException() {
-        // Test throwing an exception
-        ApodController.shouldThrowException = true;
-        
-        Test.startTest();
-        try {
-            ApodController.getTodayApod();
-            System.assert(false, 'Expected exception was not thrown.');
-        } catch (AuraHandledException e) {}
-        Test.stopTest();
-    }
      @isTest
     static void testGetAllApodsException() {
         // Test throwing an exception
@@ -137,6 +125,33 @@ public class ApodControllerTest {
         Test.startTest();
         try {
             ApodController.getApodsWithDates(Date.Today(), Date.Today());
+            System.assert(false, 'Expected exception was not thrown.');
+        } catch (AuraHandledException e) {}
+        Test.stopTest();
+    }
+
+    @isTest
+    static void testRetrieveTodayApod() {
+        // Test retrieving today's APOD
+        Test.setMock(HttpCalloutMock.class, new ApodCalloutMock());
+        
+        Test.startTest();
+        Boolean result = ApodController.retrieveTodayApod();
+        Test.stopTest();
+        
+        System.assertEquals(true, result);
+        List<Apod__c> apodRecords = [SELECT Id FROM Apod__c];
+        System.assertEquals(1, apodRecords.size());
+    }
+
+    @isTest
+    static void testRetrieveTodayApodException() {
+        // Test throwing an exception
+        ApodController.shouldThrowException = true;
+        
+        Test.startTest();
+        try {
+            ApodController.retrieveTodayApod();
             System.assert(false, 'Expected exception was not thrown.');
         } catch (AuraHandledException e) {}
         Test.stopTest();

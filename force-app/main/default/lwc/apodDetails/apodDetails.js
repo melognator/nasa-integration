@@ -9,6 +9,7 @@ import MEDIA_TYPE_FIELD from '@salesforce/schema/Apod__c.Media_Type__c';
 
 export default class ApodDetails extends LightningElement {
   apod = null;
+
   @api recordId;
   @wire(getRecord, { recordId: '$recordId', fields: [NAME_FIELD, DATE_FIELD, EXPLANATION_FIELD, HDURL_FIELD, URL_FIELD, MEDIA_TYPE_FIELD] })
   getApod({ error, data }) {
@@ -24,5 +25,9 @@ export default class ApodDetails extends LightningElement {
     } else if (error) {
       console.error('Error loading APOD');
     }
+  }
+
+  get loaded() {
+    return this.apod !== null;
   }
 }

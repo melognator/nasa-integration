@@ -102,17 +102,6 @@
         <name>TopicsForObjects</name>
     </types>
     <types>
-        <members>de</members>
-        <members>en_US</members>
-        <members>es_MX</members>
-        <members>fr</members>
-        <members>ja</members>
-        <members>ko</members>
-        <members>pt_BR</members>
-        <members>zh_CN</members>
-        <name>Translations</name>
-    </types>
-    <types>
         <members>Apod_Record_Page</members>
         <name>UiViewDefinition</name>
     </types>

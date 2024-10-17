@@ -5,6 +5,7 @@ Processing: apodintegrationtest
 Processing: apodservice
 Processing: apodintegration
 Processing: index
+Processing: preventduplicateapodtest
 Processing: apodservicetest
 Processing: apodcontrollertest
 Processing: apodscheduletest

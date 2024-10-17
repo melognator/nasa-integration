@@ -12,6 +12,7 @@ public with sharing class ApodService {
     public static Apod__c[] createApods(Apod__c[] apods){
         Set<String> apodIds = new Set<String>();
         for(Apod__c apod : apods){
+            apod.Source__c = 'Automated';
             apodIds.add(apod.ApodID__c);
         }
         List<Apod__c> existingApods = [SELECT Id, ApodID__c FROM Apod__c WHERE ApodID__c IN :apodIds];
